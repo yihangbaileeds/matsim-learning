@@ -24,6 +24,7 @@ import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.contrib.otfvis.OTFVisLiveModule;
 
 /**
  * @author nagel
@@ -40,6 +41,7 @@ public class RunMatsim{
 			config = ConfigUtils.loadConfig( args );
 		}
 
+		config.controller().setLastIteration(10);
 		config.controller().setOverwriteFileSetting( OverwriteFileSetting.deleteDirectoryIfExists );
 
 		// possibly modify config here
